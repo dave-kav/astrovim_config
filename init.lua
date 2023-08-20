@@ -61,12 +61,11 @@ return {
       layout_strategy = "flex",
       layout_config = {
         flex = {
-          flip_columns = 120,   
+          flip_columns = 120,
         },
       },
     },
   },
-
 
   -- Configure require("lazy").setup() options
   lazy = {
@@ -95,8 +94,8 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
-   vim.g.neovide_scale_factor = 0.78
-   vim.g.neovide_transparency = 0.95
+   vim.g.neovide_scale_factor = 0.77
+   vim.g.neovide_transparency = 0.94
    vim.g.neovide_cursor_vfx_mode = "railgun"
   end,
 }
