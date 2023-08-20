@@ -54,6 +54,20 @@ return {
     },
   },
 
+  -- Configure require("telescope").setup() options
+   telescope = {
+     defaults = {
+      file_ignore_patterns = { 'node_modules','dist', '.git' },
+      layout_strategy = "flex",
+      layout_config = {
+        flex = {
+          flip_columns = 120,   
+        },
+      },
+    },
+  },
+
+
   -- Configure require("lazy").setup() options
   lazy = {
     defaults = { lazy = true },
@@ -81,5 +95,8 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
+   vim.g.neovide_scale_factor = 0.78
+   vim.g.neovide_transparency = 0.95
+   vim.g.neovide_cursor_vfx_mode = "railgun"
   end,
 }

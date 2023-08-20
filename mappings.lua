@@ -32,6 +32,13 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<leader>gf"] = {
+      function()
+        -- seach current work under cursor
+        require("telescope.builtin").grep_string({ search = vim.fn.expand("<cword>") })
+      end,
+      desc = "Search word under cursor",
+    },
   },
   t = {
     -- setting a mapping to false will disable it
