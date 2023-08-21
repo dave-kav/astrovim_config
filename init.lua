@@ -18,7 +18,19 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  -- colorscheme = "astrodark",
+  colorscheme = "monokai-pro",
+  plugins = {
+    {
+      "loctvl842/monokai-pro.nvim",
+      name = "monokai-pro",
+      config = function()
+        require("monokai-pro").setup {
+          filter = 'octagon',
+        }
+      end,
+    },
+  },
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -94,8 +106,10 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
-   vim.g.neovide_scale_factor = 0.77
-   vim.g.neovide_transparency = 0.94
-   vim.g.neovide_cursor_vfx_mode = "railgun"
+    vim.g.neovide_scale_factor = 0.77
+    vim.g.neovide_transparency = 0.94
+    vim.g.neovide_cursor_vfx_mode = "railgun"
+    vim.api.nvim_set_keymap("n", "<leader>P", ":ProjectMgr<CR>", {})
+    vim.o.cmdheight=0
   end,
 }

@@ -9,9 +9,10 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.completion.copilot-lua" },
-  { import = "astrocommunity.project.project-nvim" },
   { import = "astrocommunity.test.neotest" },
-  { import = "astrocommunity.project.projectmgr-nvim" },
-  { import = "astrocommunity.workflow.bad-practices-nvim" },
   { import = "astrocommunity.editing-support.multicursors-nvim" },
+  { import = "astrocommunity.workflow.bad-practices-nvim" },
+  { import = "astrocommunity.colorscheme.monokai-pro-nvim" },
+  { import = "astrocommunity.media.vim-wakatime" },
+  { import = "astrocommunity.workflow.hardtime-nvim" }
 }

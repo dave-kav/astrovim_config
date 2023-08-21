@@ -20,7 +20,7 @@ return {
           ["cmp.entry.get_documentation"] = true,
         },
         hover = {
-          enabled = false,
+          enabled = true,
         },
         signature = {
           enabled = false,
@@ -33,6 +33,26 @@ return {
         inc_rename = true,
         lsp_doc_border = true
       },
+      views = {
+        cmdline_popup = {
+          position = {
+            row = 40,
+            col = "50%",
+          },
+          size = {
+            width = 70,
+            height = "auto",
+          },
+        },
+      },
     },
+  },
+  {
+    'charludo/projectmgr.nvim',
+    lazy = false, -- important!
+  },
+  {
+    'apzelos/blamer.nvim',
+    lazy = false, -- important!
   }
 }
