@@ -34,11 +34,41 @@ return {
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     ["<leader>gf"] = {
       function()
-        -- seach current work under cursor
         require("telescope.builtin").grep_string({ search = vim.fn.expand("<cword>") })
       end,
       desc = "Search word under cursor",
     },
+    ["<leader>P"] = {
+      function()
+        require("projectmgr").open_window()
+      end,
+      desc = "Open Project Manager",
+    },
+    ["<leader>T"] = { name = "Launch" },
+    ["<leader>Tl"] = {
+      function()
+        require("telescope").extensions.vstask.launch()
+      end,
+      desc = "Launch VS Code task",
+    },
+    ["<leader>Ta"] = {
+      function()
+        require("telescope").extensions.vstask.tasks()
+      end,
+      desc = "Launch NPM task",
+    },
+    ["<leader>Tm"] = {
+      function()
+        require("telescope").extensions.test.TestFile()
+      end,
+      desc = "Mocha Current File",
+    },
+    ["<leader><leader>"] = {
+      function ()
+        require("telescope").extensions.smart_open.smart_open()
+      end,
+      desc = "Smart Open",
+    }
   },
   t = {
     -- setting a mapping to false will disable it

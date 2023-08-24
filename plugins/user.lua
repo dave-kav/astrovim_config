@@ -20,7 +20,7 @@ return {
           ["cmp.entry.get_documentation"] = true,
         },
         hover = {
-          enabled = true,
+          enabled = false,
         },
         signature = {
           enabled = false,
@@ -36,7 +36,7 @@ return {
       views = {
         cmdline_popup = {
           position = {
-            row = 40,
+            row = 30,
             col = "50%",
           },
           size = {
@@ -54,5 +54,50 @@ return {
   {
     'apzelos/blamer.nvim',
     lazy = false, -- important!
+  },
+  {
+    'lukas-reineke/indent-blankline.nvim',
+  },
+  {
+    "danielfalk/smart-open.nvim",
+    branch = "0.2.x",
+    config = function()
+      require("telescope").load_extension("smart_open")
+    end,
+    dependencies = {
+      "kkharji/sqlite.lua",
+      -- Only required if using match_algorithm fzf
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      -- Optional.  If installed, native fzy will be used when match_algorithm is fzy
+      { "nvim-telescope/telescope-fzy-native.nvim" },
+    },
+  },
+  { 'echasnovski/mini.map', version = false, lazy = true },
+  {
+    'EthanJWright/vs-tasks.nvim',
+    dependencies = {
+      'nvim-lua/popup.nvim',
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim'
+    }
+  },
+  {
+    'vim-test/vim-test',
+    lazy = false,
+  },
+  {
+    "mickael-menu/zk-nvim",
+    config = function()
+      require("zk").setup({
+        picker = "telescope",
+        lsp = {
+          config = {
+            cmd = { "zk", "lsp" },
+            filetypes = { "markdown" },
+            root_dir = require("lspconfig").util.root_pattern(".zk"),
+          },
+        }
+      })
+    end
   }
 }
