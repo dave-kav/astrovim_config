@@ -56,7 +56,7 @@ return {
     lazy = false, -- important!
   },
   {
-    'lukas-reineke/indent-blankline.nvim',
+    'lukas-reineke/indent-blankline.nvim', lazy = false
   },
   {
     "danielfalk/smart-open.nvim",
@@ -98,6 +98,67 @@ return {
           },
         }
       })
+    end
+  },
+  {
+    'nvim-pack/nvim-spectre',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    }
+  },
+  {
+    "SmiteshP/nvim-navbuddy",
+    dependencies = {
+        "neovim/nvim-lspconfig",
+        "SmiteshP/nvim-navic",
+        "MunifTanjim/nui.nvim",
+        "numToStr/Comment.nvim",        -- Optional
+        "nvim-telescope/telescope.nvim" -- Optional
+    }
+  },
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+        {
+            "SmiteshP/nvim-navbuddy",
+            dependencies = {
+                "SmiteshP/nvim-navic",
+                "MunifTanjim/nui.nvim"
+            },
+            opts = { lsp = { auto_attach = true } }
+        }
+    },
+  },
+  {
+    "ggandor/leap.nvim",
+    lazy = false,
+  },
+  {
+    'petertriho/nvim-scrollbar',
+    lazy = false,
+    config = function()
+      require('scrollbar').setup()
+    end
+  },
+  {
+    "utilyre/barbecue.nvim",
+    lazy = false,
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    config = function()
+      require("barbecue").setup()
+    end,
+  },
+  {
+   'akinsho/bufferline.nvim',
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    config = function()
+      require("bufferline").setup()
     end
   }
 }

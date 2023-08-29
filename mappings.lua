@@ -68,6 +68,19 @@ return {
         require("telescope").extensions.smart_open.smart_open()
       end,
       desc = "Smart Open",
+    },
+    ["<leader>z"] = { name = 'Spectre' },
+    ["<leader>zt"] = {
+      function()
+        require("spectre").open()
+      end,
+      desc = "Spectre",
+    },
+    ["<leader>zw"] = {
+      function()
+        require('spectre').open_visual({select_word = true})
+      end,
+      desc = "Spectre Visual",
     }
   },
   t = {
