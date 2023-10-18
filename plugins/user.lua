@@ -142,23 +142,17 @@ return {
     end
   },
   {
-    "utilyre/barbecue.nvim",
-    lazy = false,
-    name = "barbecue",
-    version = "*",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons", -- optional dependency
-    },
-    config = function()
-      require("barbecue").setup()
-    end,
-  },
-  {
    'akinsho/bufferline.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
       require("bufferline").setup()
+    end
+  },
+  {
+    'nguyenvukhang/nvim-toggler',
+    lazy = false,
+    config = function()
+      require('nvim-toggler').setup()
     end
   }
 }
